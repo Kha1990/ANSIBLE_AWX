@@ -4,6 +4,12 @@
   gather_facts: no
 
   tasks:
+    - name: Create Loopback
+      ios_interface:
+        name: Loopback99
+        state: up
+
+
     - name: show ip
       ios_command:
         commands:
