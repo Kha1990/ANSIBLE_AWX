@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
     - name: show ip
-    - ios_command:
-       commands: 'sh ip int br'
-       register: output
+      ios_command:
+        commands: 'sh ip int br'
+        register: output
     - debug: var=output.stdout_lines
