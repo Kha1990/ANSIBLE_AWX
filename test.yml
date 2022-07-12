@@ -1,10 +1,12 @@
 ---
-- name: Cau hinh SW
+- name: Cau hinh switch
   hosts: all
   gather_facts: no
+
   tasks:
     - name: show ip
       ios_command:
-        commands: 'sh ip int br'
-        register: output
+        commands:
+          - sh ip int bri
+      register: output
     - debug: var=output.stdout_lines
